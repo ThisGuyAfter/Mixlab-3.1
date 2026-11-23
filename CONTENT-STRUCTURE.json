@@ -1,0 +1,2345 @@
+{
+  "chains": [
+    {
+      "id": "kick",
+      "family": "Drums",
+      "name": "Kick drum",
+      "role": "Impact, pulse and low-frequency anchor",
+      "stages": [
+        [
+          "Input trim",
+          "Set a predictable level before processing.",
+          "Peak roughly -12 to -6 dBFS is a comfortable tracking/mix starting window; do not chase this number if the source is already healthy.",
+          "Input level affects every processor after it. Fix clipping at the source rather than hiding it later.",
+          "FL Studio: Mixer fader / Fruity Balance",
+          "Avoid normalizing every sample to the same peak. Perceived loudness and transient shape matter more."
+        ],
+        [
+          "Corrective EQ",
+          "Remove inaudible rumble and solve boxiness before dynamics.",
+          "Use a steep HPF only if subsonic energy is unwanted, often around 20–30 Hz. Sweep 150–500 Hz for boxiness; use narrow cuts sparingly.",
+          "Low-frequency junk can consume headroom and trigger a compressor without contributing useful kick tone.",
+          "Fruity Parametric EQ 2",
+          "Do not automatically high-pass a kick. Its fundamental may sit below 50 Hz."
+        ],
+        [
+          "Transient shaping",
+          "Adjust the relationship between the initial hit and the body.",
+          "Add a little attack for definition, or reduce sustain when the tail masks the bass. Make small moves.",
+          "This shapes the envelope before compression, so the compressor responds to the version of the kick you intend to keep.",
+          "Transient Processor / envelope tools",
+          "Transient shaping is optional. A good sample may need none."
+        ],
+        [
+          "Compression",
+          "Control inconsistent hits or reshape punch.",
+          "Try 2:1–4:1, medium attack around 10–30 ms, release around 40–120 ms, and 1–3 dB gain reduction as a starting point.",
+          "After envelope shaping, compression can stabilize the hit without undoing the transient design.",
+          "Fruity Compressor / Fruity Limiter",
+          "If the kick is a consistent one-shot, compression may only add noise or flatten it."
+        ],
+        [
+          "Saturation / clipping",
+          "Add harmonics and manage peaks for density.",
+          "Try gentle soft clipping or saturation; begin with less than 1–2 dB of peak shaving and level-match.",
+          "After dynamics gives you a controlled signal to color. Clipping can also be used earlier as a deliberate sound-design choice.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Listen for a papery click or loss of low-end definition."
+        ],
+        [
+          "Final tone / level",
+          "Fit the kick into the whole arrangement.",
+          "Try a broad move around 50–100 Hz for weight or 2–5 kHz for beater; these are listening zones, not boost instructions.",
+          "Final EQ is placed late because the right balance depends on the bass, snare and arrangement.",
+          "Fruity Parametric EQ 2",
+          "Compare against the bass at matched loudness. Solo tone can mislead."
+        ]
+      ],
+      "genres": {
+        "Hip-hop / Trap": "Prioritize a stable fundamental and clear transient. Shape the tail so it leaves room for the 808; use clipping only if it improves translation.",
+        "EDM / House": "Tune the kick to the track when musically useful. Keep its envelope predictable for sidechain timing and low-end phase alignment.",
+        "Rock": "Preserve acoustic attack and room character. Avoid excessive clipping; use parallel compression for energy if needed.",
+        "Jazz / Acoustic": "Keep dynamics natural. Use corrective EQ and light compression only when the recording asks for it."
+      }
+    },
+    {
+      "id": "snare",
+      "family": "Drums",
+      "name": "Snare drum",
+      "role": "Backbeat, crack and midrange punctuation",
+      "stages": [
+        [
+          "Input trim",
+          "Establish a healthy input level.",
+          "Leave transient headroom; avoid clipping the channel input.",
+          "The source level determines how hard all following processors are driven.",
+          "Fruity Balance",
+          "Check sample velocity and layered-sample polarity before processing."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and find boxiness or ringing.",
+          "HPF only as needed, often 70–120 Hz; inspect 250–800 Hz for boxiness and narrow resonances.",
+          "Cleanup before compression prevents unwanted frequencies from dominating the detector.",
+          "Fruity Parametric EQ 2",
+          "Do not scoop all low mids. The snare body often lives there."
+        ],
+        [
+          "Transient shaping",
+          "Control stick attack and shell/body sustain.",
+          "Increase attack for crack; reduce sustain for a shorter, tighter hit.",
+          "Shapes the envelope before compression so the compressor reacts to the intended hit.",
+          "Transient Processor",
+          "A transient shaper can exaggerate bleed and cymbal spill on live recordings."
+        ],
+        [
+          "Compression",
+          "Add consistency, density or punch.",
+          "Try 3:1–5:1, attack 10–30 ms, release 50–150 ms, about 2–5 dB GR.",
+          "After shaping, it controls the new envelope rather than fighting it.",
+          "Fruity Compressor / Fruity Limiter",
+          "For more aggression, use parallel compression instead of crushing the main snare."
+        ],
+        [
+          "Saturation / parallel",
+          "Add harmonics and sustain without losing the dry transient.",
+          "Try subtle tape/console drive, or blend a heavily compressed duplicate quietly.",
+          "A parallel path lets you add density while retaining the original transient and dynamics.",
+          "Fruity Waveshaper / Soft Clipper / Mixer send",
+          "Level-match the parallel return. More loudness can masquerade as better tone."
+        ],
+        [
+          "Final EQ / space",
+          "Set crack, body and position in the kit.",
+          "Listen around 150–250 Hz for body, 2–6 kHz for crack, and 8–12 kHz for air. Add room/plate on a send.",
+          "Tone and space are final decisions made in context with hats, vocals and guitars.",
+          "Parametric EQ 2 / Fruity Reeverb 2 send",
+          "Use pre-delay to keep the initial hit clear."
+        ]
+      ],
+      "genres": {
+        "Hip-hop": "A firm transient with controlled body works well. Parallel compression and saturation can create weight without flattening the dry hit.",
+        "Pop": "Keep the crack present but smooth. Use dynamic EQ if bright samples become piercing in dense choruses.",
+        "Rock / Metal": "Blend close and room mics carefully. Parallel compression can add sustain; gate only when bleed is distracting.",
+        "Jazz": "Preserve ghost notes and natural dynamics. Favor subtle EQ and room tone over heavy processing."
+      }
+    },
+    {
+      "id": "hihat",
+      "family": "Drums",
+      "name": "Closed hi-hats",
+      "role": "Subdivision, pulse and high-frequency movement",
+      "stages": [
+        [
+          "Gain / velocity",
+          "Set the sample level and humanize the pattern.",
+          "Vary velocity and timing musically before reaching for compression.",
+          "Performance variation is often more convincing than a compressor trying to create it.",
+          "Channel volume / velocity",
+          "A perfectly even hi-hat pattern can feel stiff."
+        ],
+        [
+          "Corrective EQ",
+          "Remove low-mid clutter and identify brittle resonances.",
+          "HPF roughly 300–600 Hz if needed; inspect 6–12 kHz for harshness.",
+          "Cleanup before dynamic processing stops unnecessary energy from triggering it.",
+          "Parametric EQ 2",
+          "Do not boost the top end by default; many samples are already bright."
+        ],
+        [
+          "Transient / envelope",
+          "Adjust tick, sharpness and tail.",
+          "Shorten sustain for a tight pattern; soften attack for a smoother texture.",
+          "Envelope shaping before compression makes the detector respond to the desired hit.",
+          "Transient Processor / sampler envelope",
+          "Shortening a hat can change groove perception, not just tone."
+        ],
+        [
+          "Dynamic EQ / de-ess",
+          "Catch only the piercing hits.",
+          "Target the actual harsh band, often somewhere in 6–12 kHz; start with 1–3 dB dynamic reduction.",
+          "After broad EQ, dynamic control catches occasional peaks without dulling every hit.",
+          "Maximus multiband / dynamic EQ plugin",
+          "Static high-shelf cuts can make the whole pattern dull."
+        ],
+        [
+          "Saturation",
+          "Add subtle density or texture.",
+          "Very light tape/console drive; level-match output.",
+          "After harshness control so distortion does not exaggerate the problem.",
+          "Blood Overdrive (very lightly) / Waveshaper",
+          "High-frequency distortion can become brittle quickly."
+        ],
+        [
+          "Pan / automation",
+          "Create motion and hierarchy.",
+          "Use small pan changes, velocity accents and phrase-level automation.",
+          "The output stage is the best place to shape movement once the tone is stable.",
+          "Pan automation / Fruity Balance",
+          "Check mono and keep essential rhythmic information clear."
+        ]
+      ],
+      "genres": {
+        "Trap": "Use velocity, rolls and subtle pan automation for movement. Control brittle upper harmonics rather than simply turning hats down.",
+        "House": "Consistent groove matters more than extreme brightness. Use short tails and restrained stereo movement.",
+        "Rock": "Preserve the natural cymbal/hat sound. Avoid over-compression and aggressive saturation.",
+        "Lo-fi": "Try filtering, gentle saturation and softened transients; keep enough definition for the groove."
+      }
+    },
+    {
+      "id": "openhat",
+      "family": "Drums",
+      "name": "Open hats & cymbals",
+      "role": "Energy, accents and high-frequency wash",
+      "stages": [
+        [
+          "Gain / trim",
+          "Set peak level and preserve transient headroom.",
+          "Start with conservative level; cymbal peaks can be much higher than perceived loudness suggests.",
+          "Prevents later processors from being driven unintentionally.",
+          "Fruity Balance",
+          "Check tails against the next snare or vocal phrase."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and harsh resonances.",
+          "HPF around 200–500 Hz only if useful; inspect 5–10 kHz for bite.",
+          "Corrective filtering before dynamics avoids unnecessary detector activity.",
+          "Parametric EQ 2",
+          "Do not remove all body from acoustic cymbals."
+        ],
+        [
+          "Envelope shaping",
+          "Control strike and decay.",
+          "Shorten sustain for tight electronic hats; preserve natural decay for acoustic cymbals.",
+          "Shaping before dynamics gives predictable decay and peak behavior.",
+          "Sampler envelope / transient shaper",
+          "A gate can sound unnatural on long cymbal tails."
+        ],
+        [
+          "Dynamic EQ",
+          "Catch harsh moments without dulling the whole cymbal.",
+          "Find the piercing frequency and reduce only when it jumps out; often 1–3 dB.",
+          "After broad cleanup, dynamic EQ reacts only to troublesome moments.",
+          "Maximus / dynamic EQ",
+          "Listen in the loudest chorus where masking and harshness are most obvious."
+        ],
+        [
+          "Stereo / ambience",
+          "Place cymbals and create depth.",
+          "Keep overhead image coherent; use subtle room reverb if the source is too dry.",
+          "Spatial decisions work best after tone and envelope are under control.",
+          "Stereo tools / Reeverb 2 send",
+          "Avoid widening phasey samples that collapse in mono."
+        ]
+      ],
+      "genres": {
+        "EDM": "Short, controlled tails and deliberate stereo placement help the groove. Sidechain only if the cymbal wash masks the kick or snare.",
+        "Rock": "Preserve overhead realism and natural stereo perspective.",
+        "Pop": "Smooth upper mids and use short ambience to blend sample layers.",
+        "Ambient": "Long tails can become a texture; automate wet level and filtering."
+      }
+    },
+    {
+      "id": "toms",
+      "family": "Drums",
+      "name": "Toms",
+      "role": "Low-mid impact and fills",
+      "stages": [
+        [
+          "Gain / phase",
+          "Balance toms and check polarity/phase with overheads.",
+          "Check phase before EQ; preserve transient headroom.",
+          "Phase problems cannot be fixed with a tone boost later.",
+          "Mixer polarity / alignment",
+          "For multi-mic kits, listen in the full kit rather than solo only."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and reduce ringing.",
+          "HPF only if needed, often 30–60 Hz; inspect 200–500 Hz for mud.",
+          "Low-mid cleanup before compression avoids pumping on resonance.",
+          "Parametric EQ 2",
+          "A narrow notch may help a ring, but do not carve every tom into a thin click."
+        ],
+        [
+          "Gate / expander",
+          "Reduce bleed between hits.",
+          "Set threshold just above unwanted bleed; use hold and release that preserve the drum decay.",
+          "After cleanup, gating is easier to set and less likely to react to rumble.",
+          "Fruity Limiter gate / expander",
+          "Automation or clip gain can sound more natural than a hard gate."
+        ],
+        [
+          "Transient / compression",
+          "Shape attack and stabilize hits.",
+          "Transient attack to taste; compression 3:1–5:1, medium attack, timed release, 2–4 dB GR.",
+          "Transient shaping first, compression second, for control without losing impact.",
+          "Transient Processor / Fruity Compressor",
+          "Do not force identical dynamics on every tom hit."
+        ],
+        [
+          "Tone / saturation",
+          "Set body, stick attack and character.",
+          "Try 80–150 Hz for body and 3–5 kHz for attack; subtle saturation only if needed.",
+          "Final tone decisions depend on kick, bass and overhead balance.",
+          "Parametric EQ 2 / Waveshaper",
+          "Use automation to keep fills exciting without making every tom equally loud."
+        ]
+      ],
+      "genres": {
+        "Rock": "Tighten bleed where necessary and use parallel compression for sustain.",
+        "Metal": "Precise editing and gating may be useful, but preserve the natural decay of large toms.",
+        "Pop": "Control low-mid bloom and keep fills balanced with the vocal.",
+        "Jazz": "Favor phase coherence and natural room decay over gating."
+      }
+    },
+    {
+      "id": "drumbus",
+      "family": "Drums",
+      "name": "Drum bus",
+      "role": "Cohesion, shared tone and rhythmic glue",
+      "stages": [
+        [
+          "Bus gain",
+          "Set combined drum level before processing.",
+          "Leave headroom; avoid clipping from summed channels.",
+          "Bus processing reacts to the combined kit, so establish a sensible input first.",
+          "Mixer bus fader",
+          "Do not use the bus to fix a badly balanced individual drum."
+        ],
+        [
+          "Broad corrective EQ",
+          "Correct only whole-kit imbalances.",
+          "Use broad, subtle moves; solve individual kick/snare problems on their tracks.",
+          "Tone cleanup before bus compression reduces unwanted energy driving the detector.",
+          "Parametric EQ 2",
+          "A bus EQ move affects every drum. Be conservative."
+        ],
+        [
+          "Bus compression",
+          "Create cohesion and movement.",
+          "Try 2:1, attack 10–30 ms, release timed to groove or auto, 1–2 dB GR.",
+          "After tonal cleanup, compression can make the kit feel like one performance.",
+          "Fruity Compressor / Fruity Limiter",
+          "If the groove loses punch, slow attack or reduce gain reduction."
+        ],
+        [
+          "Tape / console color",
+          "Add shared harmonic character.",
+          "Low drive and output level matched to bypass.",
+          "After glue compression gives the whole kit a common color.",
+          "Waveshaper / Blood Overdrive / third-party tape",
+          "Coloration is optional; avoid stacking several saturators by habit."
+        ],
+        [
+          "Parallel compression",
+          "Add density while retaining transients.",
+          "Heavily compress a send, then blend quietly until the kit gains sustain.",
+          "Parallel routing keeps the dry bus intact while adding a compressed layer.",
+          "Fruity Limiter / Fruity Compressor on send",
+          "Check phase and level-match the return."
+        ],
+        [
+          "Peak control / metering",
+          "Catch occasional peaks and verify headroom.",
+          "Use gentle clipping only if intentional; compare peak and loudness before/after.",
+          "Final stage catches peaks after tone and dynamics are settled.",
+          "Fruity Soft Clipper / Wave Candy",
+          "Do not mistake a louder drum bus for a better one."
+        ]
+      ],
+      "genres": {
+        "Hip-hop": "Parallel compression, saturation and deliberate clipping can add density. Keep the kick/808 relationship intentional.",
+        "Rock": "Gentle bus compression can glue close mics and overheads; retain transient energy.",
+        "EDM": "Peak control and sidechain behavior may be more deliberate. Watch kick transients and low-end headroom.",
+        "Jazz": "Often minimal bus processing. Let the performance and room create cohesion."
+      }
+    },
+    {
+      "id": "sub",
+      "family": "Bass",
+      "name": "Sub bass",
+      "role": "Fundamental low-frequency foundation",
+      "stages": [
+        [
+          "Pitch / phase",
+          "Confirm tuning and check phase against the kick.",
+          "Verify notes against the song key; check mono and polarity.",
+          "Pitch and phase are foundational; EQ cannot repair a mistuned or cancelling sub.",
+          "Synth oscillator / tuner / polarity",
+          "Check the lowest notes on a spectrum analyzer and on more than one playback system."
+        ],
+        [
+          "Gain / cleanup",
+          "Set level and remove unnecessary subsonic energy.",
+          "HPF only if needed around 20–30 Hz; avoid removing the actual fundamental.",
+          "Cleanup before harmonics and compression protects headroom.",
+          "Fruity Balance / Parametric EQ 2",
+          "The lowest note may sit near the HPF. Use your ears and analyzer."
+        ],
+        [
+          "Harmonic generation",
+          "Create audible upper harmonics for small speakers.",
+          "Use subtle saturation or parallel distortion while keeping a clean fundamental.",
+          "Before final compression if you want the added harmonics controlled together.",
+          "Waveshaper / Blood Overdrive / Maximus",
+          "Blend distorted harmonics rather than destroying the sine-like core."
+        ],
+        [
+          "Compression",
+          "Stabilize note-to-note level when needed.",
+          "Try 2:1–3:1, medium attack/release and modest 1–3 dB GR.",
+          "After saturation makes the full harmonic signal consistent.",
+          "Fruity Compressor / Fruity Limiter",
+          "A stable synth patch may not need compression."
+        ],
+        [
+          "Kick interaction",
+          "Create space only where kick and sub actually overlap.",
+          "Use a short sidechain volume dip or dynamic EQ around the competing fundamental; often a few dB is enough.",
+          "Late in the chain, because this is a mix relationship rather than a tone defect.",
+          "Fruity Limiter sidechain / automation",
+          "Avoid pumping unless the genre calls for it."
+        ],
+        [
+          "Mono / meter",
+          "Keep the lowest octave stable and verify peaks.",
+          "Keep sub content mono; inspect phase correlation and low-end peak behavior.",
+          "Final output check ensures translation and compatibility.",
+          "Wave Candy / stereo tools",
+          "Stereo width below the low mids can vanish or cause playback inconsistency."
+        ]
+      ],
+      "genres": {
+        "Trap": "A stable sine-like core with carefully added harmonics can translate. Tune kick/sub overlap and use short sidechain dips if necessary.",
+        "EDM": "Precise envelope and kick ducking are common. Time release to the groove rather than choosing a random fast setting.",
+        "Pop": "Keep low end consistent and avoid excessive harmonic grit.",
+        "Ambient": "Long, slow movement can work, but maintain a stable fundamental and check headroom."
+      }
+    },
+    {
+      "id": "808",
+      "family": "Bass",
+      "name": "808 bass",
+      "role": "Sub weight, melodic bass line and rhythmic impact",
+      "stages": [
+        [
+          "Tune / envelope",
+          "Tune the sample and shape pitch/decay behavior.",
+          "Confirm root note and pitch envelope; check slides/portamento and tail length.",
+          "A tuned source avoids downstream EQ and saturation emphasizing the wrong notes.",
+          "Sampler pitch / tuner",
+          "Check every note and slide, not only the first hit."
+        ],
+        [
+          "Gain / trim",
+          "Set level before processing.",
+          "Keep headroom for saturation and clipping stages.",
+          "Input level determines how hard distortion responds.",
+          "Fruity Balance",
+          "Avoid hitting every plugin at maximum input just because it sounds louder."
+        ],
+        [
+          "Corrective EQ",
+          "Remove unwanted rumble and control low-mid buildup.",
+          "Inspect 20–35 Hz for unnecessary energy and 150–400 Hz for mud.",
+          "Before saturation, so unwanted bands do not become harmonically louder.",
+          "Parametric EQ 2",
+          "Do not high-pass the fundamental away."
+        ],
+        [
+          "Saturation / distortion",
+          "Generate upper harmonics so the 808 reads on small speakers.",
+          "Try soft clip, waveshaping or parallel distortion; blend to taste.",
+          "Before final peak control so the added harmonics are included in the final envelope.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Use a clean parallel layer if distortion destroys pitch clarity."
+        ],
+        [
+          "Envelope / compression",
+          "Control note sustain and variation.",
+          "Often unnecessary for consistent one-shots; if needed, 2:1–3:1 with modest GR.",
+          "After tone creation to control the processed signal.",
+          "Fruity Compressor / sampler envelope",
+          "Volume envelope automation may be cleaner than compression."
+        ],
+        [
+          "Clip / kick relationship",
+          "Control peaks and make space for the kick.",
+          "Start with gentle 1–2 dB peak shaving; sidechain or automate only the overlapping region.",
+          "Clip after shaping; kick interaction is a final arrangement-level decision.",
+          "Soft Clipper / Fruity Limiter sidechain",
+          "Do not clip so hard that different notes lose their musical identity."
+        ]
+      ],
+      "genres": {
+        "Trap": "Slides, saturation and clipping are common. Keep the fundamental recognizable and manage kick overlap intentionally.",
+        "Drill": "Pay attention to glide timing and note transitions. Use controlled distortion to retain articulation.",
+        "EDM": "A clean sub core and tempo-aware ducking may work better than heavy clipping.",
+        "Pop": "Shorten tails where needed and control note-to-note consistency."
+      }
+    },
+    {
+      "id": "electricbass",
+      "family": "Bass",
+      "name": "Electric bass guitar",
+      "role": "Groove, low-end support and midrange definition",
+      "stages": [
+        [
+          "DI / amp blend",
+          "Balance clean DI with amp or modeled tone.",
+          "Check phase before blending; DI provides definition, amp adds character.",
+          "Source blending and phase should be solved before EQ and compression.",
+          "Fruity Stereo Shaper / polarity tools",
+          "Flip polarity and compare; time alignment is not automatically better."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and reduce muddy buildup.",
+          "HPF around 30–45 Hz if needed; inspect 150–350 Hz for mud.",
+          "Cleanup before compression avoids low-frequency junk triggering gain reduction.",
+          "Parametric EQ 2",
+          "The bass fundamental and body vary with tuning and instrument."
+        ],
+        [
+          "Compression",
+          "Control note-to-note dynamics and sustain.",
+          "Try 3:1–5:1, attack 15–40 ms, release 50–150 ms, 3–5 dB GR as a starting point.",
+          "After cleanup to stabilize the performance without compressing rumble.",
+          "Fruity Compressor / Fruity Limiter",
+          "Use slower attack to preserve pick/finger articulation."
+        ],
+        [
+          "Saturation",
+          "Add harmonics and audible midrange.",
+          "Subtle tape, tube or amp drive; compare clean and colored versions.",
+          "After compression for a consistent signal, or before for more compressor interaction.",
+          "Blood Overdrive / Waveshaper",
+          "Keep the low fundamental clean if heavy distortion is used."
+        ],
+        [
+          "Tonal EQ",
+          "Balance weight, note definition and attack.",
+          "Try 60–100 Hz for weight, 700 Hz–1.5 kHz for note identity, 2–4 kHz for pick/finger attack.",
+          "After dynamics because compression changes perceived tone.",
+          "Parametric EQ 2",
+          "Make room for kick and guitars rather than boosting every desirable band."
+        ],
+        [
+          "Kick interaction",
+          "Resolve low-frequency masking.",
+          "Use a gentle sidechain dip or dynamic EQ only in the overlapping band.",
+          "Final because the correct amount depends on the actual kick pattern.",
+          "Fruity Limiter sidechain / automation",
+          "A small arrangement change can outperform complex processing."
+        ]
+      ],
+      "genres": {
+        "Rock": "Amp character and upper-mid note definition are useful; keep compression musical and consistent.",
+        "Funk": "Preserve transient articulation and dynamics. Avoid over-compressing slap or fingerstyle nuance.",
+        "Pop": "Controlled low end and stable note levels help the bass translate on small speakers.",
+        "Jazz": "Use gentler compression and preserve the instrument's natural dynamic range."
+      }
+    },
+    {
+      "id": "piano",
+      "family": "Keys & Synths",
+      "name": "Acoustic piano",
+      "role": "Harmony, rhythm and expressive melodic detail",
+      "stages": [
+        [
+          "Gain / stereo / phase",
+          "Set input and check the recorded stereo image.",
+          "Check phase on multi-mic recordings; avoid excessive width.",
+          "A phase problem is a source issue, not an EQ issue.",
+          "Fruity Balance / Stereo Shaper",
+          "Keep the natural left-right perspective consistent with the arrangement."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble, room buildup and resonances.",
+          "HPF roughly 30–80 Hz depending on role; inspect 200–500 Hz for mud.",
+          "Cleanup before dynamics prevents room buildup from driving compression.",
+          "Parametric EQ 2",
+          "If piano is the main harmonic anchor, do not thin it just to make space."
+        ],
+        [
+          "Compression",
+          "Control peaks while preserving expression.",
+          "Try 2:1–3:1, attack 20–40 ms, release 80–200 ms, 1–3 dB GR.",
+          "After cleanup, so the compressor responds to musical notes rather than rumble.",
+          "Fruity Compressor",
+          "Use automation for isolated loud notes when possible."
+        ],
+        [
+          "Dynamic EQ",
+          "Tame hammer attack or resonant notes that jump out.",
+          "Inspect 2–5 kHz; use dynamic reduction only on harsh notes.",
+          "After broad EQ and compression if those stages expose uneven attacks.",
+          "Maximus / third-party dynamic EQ",
+          "Do not permanently remove the piano's articulation."
+        ],
+        [
+          "Tonal EQ",
+          "Set warmth, definition and air.",
+          "Try 1–3 kHz for note definition and 8–12 kHz for air, only if needed.",
+          "Late EQ is a contextual finishing move after dynamics.",
+          "Parametric EQ 2",
+          "Check against vocals and guitars; piano often competes in the same midrange."
+        ],
+        [
+          "Reverb send",
+          "Place the piano in a coherent space.",
+          "Room or hall; pre-delay roughly 15–40 ms; filter low end from the return.",
+          "A send preserves dry attack while letting the reverb sit behind it.",
+          "Fruity Reeverb 2 send / Convolver",
+          "Longer reverb can blur fast passages."
+        ]
+      ],
+      "genres": {
+        "Pop": "Polished clarity, moderate stereo width and controlled ambience.",
+        "Jazz / Classical": "Preserve dynamics, natural stereo perspective and realistic room/hall sound.",
+        "Hip-hop": "Filtering, saturation and rhythmic delay can turn piano into a textured loop.",
+        "Ambient": "Long reverb and modulation can be part of the instrument's identity."
+      }
+    },
+    {
+      "id": "rhodes",
+      "family": "Keys & Synths",
+      "name": "Electric piano / Rhodes",
+      "role": "Warm harmonic texture and rhythmic chord movement",
+      "stages": [
+        [
+          "Input / tone source",
+          "Set instrument amp, tremolo and pickup tone first.",
+          "Choose tine/amp character and input level before corrective processing.",
+          "The source's character should be established before mix plugins.",
+          "Instrument controls / amp sim",
+          "Do not try to EQ a source tone that should be changed at the instrument."
+        ],
+        [
+          "Corrective EQ",
+          "Remove low buildup and resonances.",
+          "HPF 60–100 Hz if needed; inspect 200–500 Hz for mud.",
+          "Before compression and saturation to avoid exaggerating unwanted frequencies.",
+          "Parametric EQ 2",
+          "Retain warmth if the part is meant to carry the harmony."
+        ],
+        [
+          "Compression",
+          "Smooth chord dynamics without removing touch.",
+          "Try 2:1–3:1, attack 15–30 ms, release 60–150 ms, 1–3 dB GR.",
+          "After cleanup; keep performance dynamics intact.",
+          "Fruity Compressor",
+          "Use light compression for expressive Rhodes parts."
+        ],
+        [
+          "Saturation",
+          "Add tape, tube or amp warmth.",
+          "Subtle drive; level-match output.",
+          "After dynamics for stable coloration, or before if you want compression to react to saturation.",
+          "Blood Overdrive / Waveshaper",
+          "Low-mid saturation can make a mix cloudy."
+        ],
+        [
+          "Modulation",
+          "Create chorus, tremolo or stereo movement.",
+          "Slow chorus with moderate depth; tempo-synced tremolo for rhythmic parts.",
+          "After core tone and dynamics so modulation does not confuse corrective processing.",
+          "Fruity Chorus / Love Philter",
+          "Check mono compatibility, especially on wide chorus patches."
+        ],
+        [
+          "Send FX",
+          "Add plate, spring, room or tempo delay.",
+          "Filter returns and keep the dry attack clear.",
+          "Sends allow the same space to be shared with other keys.",
+          "Reeverb 2 / Delay 3 sends",
+          "Automate send level between sections."
+        ]
+      ],
+      "genres": {
+        "Neo-soul": "Warm saturation, subtle chorus and expressive dynamics; preserve touch and chord detail.",
+        "Lo-fi": "Tape color, filtering and gentle pitch modulation can create movement.",
+        "House": "Tremolo and tempo-synced delay can make chords rhythmically active.",
+        "Pop": "Keep width controlled so the vocal remains centered."
+      }
+    },
+    {
+      "id": "synthbass",
+      "family": "Bass",
+      "name": "Synth bass / Reese",
+      "role": "Electronic low end with harmonic motion",
+      "stages": [
+        [
+          "Oscillator / phase design",
+          "Set tuning, phase, unison and envelope at the source.",
+          "Keep the fundamental stable; inspect unison phase and mono behavior.",
+          "Source architecture determines whether the bass is stable before plugins.",
+          "Synth oscillator / phase reset",
+          "Random phase can cause note-to-note low-end inconsistency."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and excessive low-mid buildup.",
+          "HPF only if needed below the fundamental; inspect 150–400 Hz.",
+          "Before distortion, so unwanted energy is not amplified into harmonics.",
+          "Parametric EQ 2",
+          "Do not remove the low end that defines the patch."
+        ],
+        [
+          "Distortion / saturation",
+          "Build harmonics and character.",
+          "Use tube, waveshaping or multiband distortion; blend parallel layers.",
+          "Before multiband control if the distortion needs smoothing.",
+          "Waveshaper / Blood Overdrive / Maximus",
+          "Parallel distortion retains a stable sub center."
+        ],
+        [
+          "Multiband dynamics",
+          "Control low and high bands independently.",
+          "Use modest ratios, often 1.5:1–3:1, only on unstable bands.",
+          "After harmonic creation so the new spectrum is controlled.",
+          "Maximus",
+          "Multiband compression can shift tone and punch; use only for a clear problem."
+        ],
+        [
+          "Stereo management",
+          "Widen upper harmonics while preserving low center.",
+          "Keep sub mono; widen upper harmonics and check mono fold-down.",
+          "After tonal and dynamic control, before final send effects.",
+          "Stereo Shaper / Chorus",
+          "Never assume a wide bass patch will translate in mono."
+        ],
+        [
+          "Sidechain / automation",
+          "Make room for kick and create rhythmic movement.",
+          "Use a timed volume envelope or a few dB dynamic dip in the overlapping band.",
+          "Final mix-interaction stage.",
+          "Fruity Limiter sidechain / automation",
+          "Use groove-timed release rather than a generic fast setting."
+        ]
+      ],
+      "genres": {
+        "EDM": "Sidechain movement is often part of the groove. Keep the fundamental centered and stable.",
+        "Synthwave": "Chorus and stereo upper harmonics can create width; protect the mono sub.",
+        "Industrial": "Aggressive distortion and multiband shaping can be stylistic, but preserve note identity.",
+        "Pop": "Keep width and modulation controlled to protect the vocal and low-end focus."
+      }
+    },
+    {
+      "id": "acousticgtr",
+      "family": "Guitars",
+      "name": "Acoustic guitar",
+      "role": "Strumming, picking and natural harmonic detail",
+      "stages": [
+        [
+          "Source / phase / noise",
+          "Check mic placement, DI blend, phase and handling noise.",
+          "For multiple mics, compare polarity and timing; record healthy peaks without clipping.",
+          "Source quality and phase are more important than corrective plugins.",
+          "Fruity Balance / polarity tools",
+          "Do not time-align mics automatically; listen for the most natural result."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble, boom and boxiness.",
+          "HPF often 70–120 Hz depending on tuning; inspect 150–400 Hz for boom and 2–5 kHz for pick harshness.",
+          "Before compression so low-frequency thumps do not dominate gain reduction.",
+          "Parametric EQ 2",
+          "The guitar may need its body to blend with bass and vocal."
+        ],
+        [
+          "Compression",
+          "Even out strumming and fingerpicking.",
+          "Try 2:1–3:1, attack 15–30 ms, release 50–120 ms, 2–4 dB GR.",
+          "After cleanup; preserve pick transient and natural movement.",
+          "Fruity Compressor",
+          "Clip gain can be more transparent than heavy compression."
+        ],
+        [
+          "Dynamic EQ / de-ess",
+          "Control pick attack, string squeaks and sharp resonances.",
+          "Target 2–5 kHz for pick harshness; locate squeaks by listening rather than assuming a fixed frequency.",
+          "After compression if the compressor reveals squeaks or sharp attacks.",
+          "Maximus / dynamic EQ",
+          "Do not de-ess the entire high end into dullness."
+        ],
+        [
+          "Tonal EQ",
+          "Add articulation or air if the part needs it.",
+          "Try 3–6 kHz for articulation and 8–12 kHz for air, with broad subtle moves.",
+          "After dynamics for final context-aware tone.",
+          "Parametric EQ 2",
+          "Check in the full arrangement with vocal and cymbals."
+        ],
+        [
+          "Space send",
+          "Place the guitar in a believable room or stylized space.",
+          "Short room for realism; plate for polish; filtered tempo delay for rhythmic parts.",
+          "Sends retain a clear dry center and allow shared ambience.",
+          "Reeverb 2 / Delay 3",
+          "Too much stereo reverb can blur strumming."
+        ]
+      ],
+      "genres": {
+        "Folk": "Natural dynamics, stereo image and room tone are priorities.",
+        "Pop": "Controlled low end and bright but smooth articulation.",
+        "Country": "Preserve pick definition and rhythmic precision.",
+        "Indie / Shoegaze": "Modulation and long reverb can turn strums into a sustained texture."
+      }
+    },
+    {
+      "id": "electricgtr",
+      "family": "Guitars",
+      "name": "Electric guitar",
+      "role": "Riffs, chords, melodic lines and texture",
+      "stages": [
+        [
+          "Amp / cab tone",
+          "Establish the main tone before mix processing.",
+          "Choose amp gain, cabinet and mic position; control input level into the amp sim.",
+          "Amp/cab tone is the instrument's identity. Mix EQ should refine, not invent it all.",
+          "Amp sim / cabinet IR",
+          "Avoid stacking amp sims without a deliberate reason."
+        ],
+        [
+          "Noise control",
+          "Reduce idle noise while preserving note decay.",
+          "Set gate threshold just above noise floor; use release that lets notes ring.",
+          "Early noise control prevents hiss from being exaggerated downstream.",
+          "Fruity Limiter gate / expander",
+          "Automation can sound more natural than a hard gate."
+        ],
+        [
+          "Corrective EQ",
+          "Remove unnecessary lows and resonant buildup.",
+          "HPF often 70–120 Hz; inspect 200–500 Hz for mud and 2–5 kHz for harshness.",
+          "Before compression and modulation to avoid processing unwanted bands.",
+          "Parametric EQ 2",
+          "Do not automatically scoop 400 Hz; that can make guitars disappear."
+        ],
+        [
+          "Compression",
+          "Control dynamics when the performance needs it.",
+          "Try 2:1–4:1, attack 10–30 ms, release 50–120 ms, modest GR.",
+          "After cleanup; distorted amp tones may already be compressed enough.",
+          "Fruity Compressor",
+          "Heavy distortion often has little dynamic range left to compress."
+        ],
+        [
+          "Dynamic EQ / resonance",
+          "Tame piercing amp peaks without dulling the entire tone.",
+          "Find harsh resonances in context, often upper mids; use narrow dynamic cuts sparingly.",
+          "After the amp tone is established, because resonances are source-dependent.",
+          "Maximus / dynamic EQ",
+          "Do not notch-sweep every frequency until the guitar sounds hollow."
+        ],
+        [
+          "Modulation / stereo",
+          "Add chorus, phaser, tremolo or layered width.",
+          "Use modulation intentionally; check mono and keep a stable center part.",
+          "After corrective tone shaping so modulation is not mistaken for a source problem.",
+          "Fruity Chorus / Phaser / Stereo Shaper",
+          "Double-tracking real performances usually sounds more natural than widening one take."
+        ],
+        [
+          "Delay / reverb send",
+          "Create depth, rhythmic repeats or atmosphere.",
+          "Tempo-sync delay; filter repeats; short room for placement or long reverb for shoegaze.",
+          "Send effects sit behind the dry guitar and can be automated by section.",
+          "Delay 3 / Reeverb 2",
+          "Long tails need arrangement space."
+        ]
+      ],
+      "genres": {
+        "Rock": "Amp and cab tone first; keep post-processing restrained and use double-tracking for width.",
+        "Metal": "Tight low end, controlled upper-mid harshness and precise performance editing.",
+        "Shoegaze": "Layer modulation, saturation and long reverb; keep one focused layer to preserve definition.",
+        "Pop": "Control presence and use short stereo ambience rather than excessive width."
+      }
+    },
+    {
+      "id": "strings",
+      "family": "Orchestral",
+      "name": "Orchestral strings",
+      "role": "Emotional movement, harmonic support and cinematic scale",
+      "stages": [
+        [
+          "Articulation / expression",
+          "Choose the right performance articulation and dynamics.",
+          "Set legato, staccato, sustain, bow changes and velocity layers before mix processing.",
+          "Good articulation prevents plugins being used to fix a performance mismatch.",
+          "Library articulation / expression controls",
+          "Use expression and modulation lanes; static velocity can make strings sound synthetic."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and low-mid buildup.",
+          "HPF roughly 60–120 Hz depending on register; inspect 200–500 Hz for mud.",
+          "Cleanup before dynamics keeps the compressor from reacting to unnecessary low energy.",
+          "Parametric EQ 2",
+          "Do not thin low cellos/basses just because the section is dense."
+        ],
+        [
+          "Dynamic control",
+          "Smooth inconsistent samples while preserving swells.",
+          "Gentle 1.5:1–2.5:1, often 1–3 dB GR; automate swells where possible.",
+          "After cleanup; expressive volume automation often beats compression.",
+          "Fruity Compressor / automation",
+          "Do not flatten crescendos that create the emotion."
+        ],
+        [
+          "Tonal shaping",
+          "Balance warmth, bow detail and air.",
+          "Listen around 200–400 Hz for warmth, 2–5 kHz for bow detail, 8–12 kHz for air.",
+          "After dynamics, because compression may change perceived brightness.",
+          "Parametric EQ 2",
+          "Avoid boosting every string section into the same presence range."
+        ],
+        [
+          "Saturation / width",
+          "Add subtle density and manage section placement.",
+          "Gentle tape color; preserve section panning and avoid excessive widening.",
+          "After tone shaping; spatial image should reflect the orchestration.",
+          "Waveshaper / Stereo Shaper",
+          "Use section panning before stereo widening."
+        ],
+        [
+          "Hall / stage send",
+          "Create believable orchestral depth.",
+          "Scoring-stage or hall; pre-delay 20–50 ms; filter low end from the return.",
+          "Send reverb allows sections to share the same acoustic environment.",
+          "Convolver / Reeverb 2 send",
+          "A common reverb can glue separate libraries together."
+        ]
+      ],
+      "genres": {
+        "Cinematic": "Long halls, dynamic swells and layered depth. Automate expression and reverb sends across the cue.",
+        "Pop": "Controlled width and shorter reverb; keep the vocal in front.",
+        "Hip-hop": "Filtered string stabs, saturation and rhythmic chops can make orchestral parts sit in a beat.",
+        "Classical": "Preserve dynamics, natural section placement and realistic hall perspective."
+      }
+    },
+    {
+      "id": "brass",
+      "family": "Orchestral",
+      "name": "Brass & horns",
+      "role": "Punch, melodic accents and powerful midrange energy",
+      "stages": [
+        [
+          "Articulation / gain",
+          "Set attack, release, velocity and section balance.",
+          "Balance section layers before plugins; check staccato and sustain transitions.",
+          "Source articulation dictates transient shape and perceived loudness.",
+          "Library expression controls",
+          "Layered brass can sound phasey if samples are not aligned or naturally ensemble-played."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble, boxiness and harsh resonances.",
+          "HPF around 70–120 Hz when appropriate; inspect 250–500 Hz and 2–5 kHz.",
+          "Before compression to avoid low-mid energy driving gain reduction.",
+          "Parametric EQ 2",
+          "Keep enough body for brass to sound powerful."
+        ],
+        [
+          "Compression",
+          "Control accents and note-to-note dynamics.",
+          "Try 2:1–3:1, attack 15–30 ms, release 60–150 ms, 1–3 dB GR.",
+          "After cleanup, with enough attack to preserve the brass transient.",
+          "Fruity Compressor",
+          "Automate individual accents rather than compressing the whole section heavily."
+        ],
+        [
+          "Dynamic EQ",
+          "Tame piercing upper-mid peaks.",
+          "Inspect 2–5 kHz and reduce only when notes become aggressive.",
+          "After compression if peaks become more exposed.",
+          "Maximus / dynamic EQ",
+          "The harsh frequency can shift with register and articulation."
+        ],
+        [
+          "Saturation",
+          "Add density and edge.",
+          "Subtle tape/tube drive; level-match.",
+          "After dynamics for controlled coloration.",
+          "Waveshaper / Blood Overdrive",
+          "Brass harmonics can become abrasive quickly."
+        ],
+        [
+          "Room / hall send",
+          "Give the section coherent depth.",
+          "Short room for cohesion or hall for cinematic scale.",
+          "Shared send helps section layers inhabit one space.",
+          "Reeverb 2 / Convolver",
+          "Keep attacks clear with pre-delay."
+        ]
+      ],
+      "genres": {
+        "Funk": "Punchy attacks, tight articulation and controlled room sound.",
+        "Big band": "Preserve section dynamics and natural ensemble space.",
+        "Hip-hop": "Compressed stabs and saturation can make short brass hits cut through.",
+        "Cinematic": "Large hall and controlled low-mid buildup create scale."
+      }
+    },
+    {
+      "id": "pads",
+      "family": "Synths",
+      "name": "Synth pads & atmospheres",
+      "role": "Sustained harmonic depth and evolving background energy",
+      "stages": [
+        [
+          "Source envelope / motion",
+          "Shape attack, release, oscillator movement and filter automation.",
+          "Slow attack/release for beds; tempo-synced movement for rhythmic pads.",
+          "The source envelope defines how the pad occupies time before mix effects.",
+          "Synth envelope / LFO",
+          "Avoid a long release if the harmony changes quickly."
+        ],
+        [
+          "Corrective EQ",
+          "Remove low-end clutter and frequency masking.",
+          "HPF often 100–250 Hz depending on arrangement; cut only masking buildup.",
+          "Cleanup before saturation and reverb prevents mud from multiplying.",
+          "Parametric EQ 2",
+          "Pads can be wide and soft, but should not own every frequency."
+        ],
+        [
+          "Saturation",
+          "Add harmonic detail and texture.",
+          "Subtle tape/tube or multiband drive; level-match.",
+          "Before compression if you want the harmonics controlled together.",
+          "Waveshaper / Blood Overdrive / Maximus",
+          "Parallel saturation can retain a clean fundamental."
+        ],
+        [
+          "Sidechain / dynamics",
+          "Create rhythmic breathing or stabilize level.",
+          "Use kick-triggered volume shaping or light compression; time release to groove.",
+          "After source tone and cleanup, because this is a mix interaction.",
+          "Fruity Limiter sidechain / automation",
+          "Do not sidechain every pad automatically."
+        ],
+        [
+          "Modulation / stereo",
+          "Create width and evolving movement.",
+          "Chorus, phaser or slow LFO; keep low frequencies centered and check mono.",
+          "After corrective work so movement does not obscure problems.",
+          "Fruity Chorus / Phaser / Stereo Shaper",
+          "Wide pads can vanish in mono if their sides are mostly out of phase."
+        ],
+        [
+          "Reverb / delay",
+          "Create atmosphere and depth.",
+          "Long hall, shimmer-style effect or filtered delay; automate wet level.",
+          "Final send effects create the environment around the instrument.",
+          "Reeverb 2 / Delay 3 send",
+          "Filter the return and duck it if it masks the lead vocal."
+        ]
+      ],
+      "genres": {
+        "Ambient": "Long evolving tails, modulation and slow automation can be central to the composition.",
+        "Synthwave": "Analog-style chorus and movement; keep a stable center for bass and lead.",
+        "EDM": "Rhythmic sidechain and tempo-aware modulation create movement.",
+        "Pop": "Control width and low-mid density to leave space for vocals."
+      }
+    },
+    {
+      "id": "lead",
+      "family": "Synths",
+      "name": "Synth lead",
+      "role": "Foreground melody, hook and melodic focus",
+      "stages": [
+        [
+          "Source / gain",
+          "Choose oscillator, filter, envelope and unison character.",
+          "Set source level without clipping; tune portamento and envelope to the phrase.",
+          "The source should already communicate the intended tone before mix plugins.",
+          "Synth controls",
+          "A weak patch is not always fixed by more high-end EQ."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and troublesome resonances.",
+          "HPF around 80–150 Hz if needed; inspect 2–5 kHz for harshness.",
+          "Before saturation and compression so problem frequencies are not exaggerated.",
+          "Parametric EQ 2",
+          "Check against vocal presence and guitar upper mids."
+        ],
+        [
+          "Saturation",
+          "Add harmonic character and density.",
+          "Try tube/tape/soft clip; blend to taste and level-match.",
+          "Before compression if you want the harmonics controlled by the compressor.",
+          "Waveshaper / Blood Overdrive",
+          "Too much drive can make a lead loud but less intelligible."
+        ],
+        [
+          "Compression",
+          "Stabilize sustain and phrase level.",
+          "Try 2:1–4:1, attack 10–30 ms, release 50–150 ms, 1–3 dB GR.",
+          "After saturation for controlled output.",
+          "Fruity Compressor / Limiter",
+          "Use automation for phrase-level dynamics."
+        ],
+        [
+          "Presence EQ",
+          "Give the lead a clear position.",
+          "Try broad presence around 1–4 kHz or air around 8–12 kHz only if needed.",
+          "Late tone shaping is guided by the whole arrangement.",
+          "Parametric EQ 2",
+          "A small arrangement carve elsewhere may be better than a large lead boost."
+        ],
+        [
+          "Delay / reverb send",
+          "Add depth without burying the melody.",
+          "Tempo-synced quarter/dotted eighth; filter feedback; moderate plate or hall.",
+          "Sends place effects behind the dry lead and allow automation.",
+          "Delay 3 / Reeverb 2",
+          "Automate delay throws at phrase endings."
+        ]
+      ],
+      "genres": {
+        "EDM": "Tempo-synced delay, sidechain and defined transient help the lead stay energetic.",
+        "Synthwave": "Analog saturation, chorus and rhythmic delay support the retro character.",
+        "Pop": "Keep the hook forward and control ambience around the vocal.",
+        "Trance": "Wide layered leads and dotted delays can create scale; protect mono compatibility."
+      }
+    },
+    {
+      "id": "pluck",
+      "family": "Synths",
+      "name": "Plucks & arpeggios",
+      "role": "Rhythmic melodic movement and transient detail",
+      "stages": [
+        [
+          "Envelope / source",
+          "Set decay, sustain and release for the pattern.",
+          "Short decay for tight plucks; tune release to tempo and note spacing.",
+          "Source envelope is the first rhythmic processor.",
+          "Synth envelope / arpeggiator",
+          "A long release can smear a fast arpeggio."
+        ],
+        [
+          "Corrective EQ",
+          "Remove low-frequency clutter and resonant peaks.",
+          "HPF around 100–200 Hz if appropriate; inspect 2–5 kHz for bite.",
+          "Before compression so low energy does not drive the detector.",
+          "Parametric EQ 2",
+          "Do not remove low body if the pluck is the main harmonic anchor."
+        ],
+        [
+          "Transient shaping",
+          "Control attack and sustain.",
+          "Increase attack for sharper plucks; shorten sustain for separation.",
+          "Before compression when shaping the envelope itself.",
+          "Transient Processor",
+          "A pluck may already have a sharp transient from its synth envelope."
+        ],
+        [
+          "Compression",
+          "Even out note levels and sustain.",
+          "Try 2:1–3:1 with moderate attack/release and 1–3 dB GR.",
+          "After transient shaping for controlled dynamics.",
+          "Fruity Compressor",
+          "Use velocity automation for expressive arpeggios."
+        ],
+        [
+          "Saturation / tone",
+          "Add harmonic character and presence.",
+          "Subtle drive; presence EQ only where the mix needs it.",
+          "After dynamics for final tone shaping.",
+          "Waveshaper / Parametric EQ 2",
+          "Avoid harshness stacking with hi-hats."
+        ],
+        [
+          "Delay / reverb send",
+          "Add rhythmic repeats and depth.",
+          "Ping-pong or dotted-eighth delay; filter feedback; short plate.",
+          "Send FX retain the pluck's initial attack.",
+          "Delay 3 / Reeverb 2",
+          "Sync delay to tempo and check for buildup at phrase changes."
+        ]
+      ],
+      "genres": {
+        "Trance": "Dotted delays and layered stereo movement create momentum.",
+        "House": "Short envelopes and groove-synced delays support the pocket.",
+        "Pop": "Control attack and ambience so the pluck does not compete with consonants.",
+        "Lo-fi": "Softened transients and filtered repeats create a hazy texture."
+      }
+    },
+    {
+      "id": "choir",
+      "family": "Orchestral",
+      "name": "Choir & vocal chops",
+      "role": "Human texture, harmonic layers and hooks",
+      "stages": [
+        [
+          "Pitch / timing",
+          "Align notes and timing while preserving expression.",
+          "Correct pitch before downstream processing; set transition speed to taste.",
+          "Pitch and timing are source corrections; later processors cannot restore natural transitions.",
+          "Pitch tool / NewTone",
+          "Avoid over-correcting expressive choir or chop phrasing."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and boxiness.",
+          "HPF around 80–150 Hz; inspect 200–500 Hz for buildup.",
+          "Before compression so room/low energy does not trigger gain reduction.",
+          "Parametric EQ 2",
+          "Different vowel sounds have different resonances."
+        ],
+        [
+          "Compression",
+          "Stabilize sustained layers and chops.",
+          "Try 2:1–4:1, attack 10–30 ms, release 60–150 ms, 2–4 dB GR.",
+          "After cleanup to even out phrases.",
+          "Fruity Compressor / Limiter",
+          "Use clip gain for individual syllables where possible."
+        ],
+        [
+          "De-ess / dynamic EQ",
+          "Control consonants and upper-mid peaks.",
+          "Find sibilance, often 5–9 kHz, but tune to the voice; reduce only harsh moments.",
+          "After compression if compression exposes sibilance.",
+          "Maximus / dynamic EQ",
+          "A de-esser set too low can dull the entire layer."
+        ],
+        [
+          "Saturation / modulation",
+          "Add density or synthetic character.",
+          "Subtle saturation, chorus or formant treatment.",
+          "After corrective dynamics so effects do not magnify problems.",
+          "Waveshaper / Chorus",
+          "Chorus can smear pitch center; use deliberately."
+        ],
+        [
+          "Reverb / delay send",
+          "Create depth and atmosphere.",
+          "Plate or hall; pre-delay 20–40 ms; filtered delay on sends.",
+          "Send effects sit behind the dry articulation.",
+          "Reeverb 2 / Delay 3",
+          "Automate tails and keep low-mid reverb buildup controlled."
+        ]
+      ],
+      "genres": {
+        "Pop": "Clean stacked harmonies, stable pitch and polished ambience.",
+        "Gospel": "Preserve dynamics and use realistic hall space.",
+        "Hip-hop": "Chopped, filtered and saturated vocal textures can become melodic hooks.",
+        "Ambient": "Long reverb, modulation and evolving tails create a vocal pad."
+      }
+    },
+    {
+      "id": "fx",
+      "family": "FX & textures",
+      "name": "Risers, impacts & transitions",
+      "role": "Tension, punctuation and arrangement movement",
+      "stages": [
+        [
+          "Gain / trim",
+          "Balance the source and preserve transient headroom.",
+          "Check peaks and avoid accidental clipping.",
+          "Input level determines how strongly distortion and dynamics react.",
+          "Fruity Balance",
+          "Transitions can be intentionally louder, but should not surprise the master bus."
+        ],
+        [
+          "Corrective filtering",
+          "Remove unwanted rumble and resonances.",
+          "Use HPF/LPF according to the effect; notch only obvious harsh peaks.",
+          "Before distortion so unwanted bands do not become exaggerated.",
+          "Parametric EQ 2",
+          "Filter sweeps are often part of the effect design, not cleanup."
+        ],
+        [
+          "Distortion / texture",
+          "Create intensity, grit or harmonic density.",
+          "Use parallel distortion or automate drive across the effect.",
+          "After cleanup to build intentional harmonics.",
+          "Waveshaper / Blood Overdrive",
+          "Automate drive so the effect evolves rather than staying static."
+        ],
+        [
+          "Envelope / peak control",
+          "Shape impact, decay and transient.",
+          "Transient shaper or gentle clipper; control only peaks that distract.",
+          "After tone creation, because distortion changes peaks.",
+          "Transient Processor / Soft Clipper",
+          "Preserve the first impact transient if it is the cue's punctuation."
+        ],
+        [
+          "Pitch / filter automation",
+          "Create motion and transition.",
+          "Automate pitch, cutoff, resonance, volume and stereo width over time.",
+          "Once the core sound is stable, automation creates the gesture.",
+          "Fruity Love Philter / automation clips",
+          "Draw automation with the musical phrase in mind."
+        ],
+        [
+          "Reverb / delay tail",
+          "Create the final spatial tail.",
+          "Long reverb for impacts; reverse reverb for transitions; filtered delay for echoes.",
+          "Last, so the effect's space contains the finished sound.",
+          "Reeverb 2 / Delay 3 / Convolver",
+          "Print or render tails if you need precise arrangement control."
+        ]
+      ],
+      "genres": {
+        "EDM": "Filter rises, pitch automation and sidechain can build tension into drops.",
+        "Cinematic": "Long tails, layered impacts and reverse textures create scale.",
+        "Hip-hop": "Short impacts, reverse transitions and tape stops can punctuate sections.",
+        "Industrial": "Distortion and metallic resonances can be the core aesthetic."
+      }
+    },
+    {
+      "id": "clap",
+      "family": "Drums",
+      "name": "Clap",
+      "role": "Sharp transient and stereo backbeat",
+      "stages": [
+        [
+          "Input trim",
+          "Set a healthy source level for clap.",
+          "Peak roughly -12 to -6 dBFS is a comfortable tracking/mix starting window; do not chase this number if the source is already healthy.",
+          "Input level controls every processor that follows; start with headroom.",
+          "FL Studio: Mixer fader / Fruity Balance",
+          "Avoid normalizing every sample to the same peak. Perceived loudness and transient shape matter more."
+        ],
+        [
+          "Corrective EQ",
+          "Remove inaudible rumble and solve boxiness before dynamics.",
+          "Use a steep HPF only if subsonic energy is unwanted, often around 20–30 Hz. Sweep 150–500 Hz for boxiness; use narrow cuts sparingly.",
+          "Low-frequency junk can consume headroom and trigger a compressor without contributing useful kick tone.",
+          "Fruity Parametric EQ 2",
+          "Do not automatically high-pass a kick. Its fundamental may sit below 50 Hz."
+        ],
+        [
+          "Transient shaping",
+          "Adjust the relationship between the initial hit and the body.",
+          "Add a little attack for definition, or reduce sustain when the tail masks the bass. Make small moves.",
+          "This shapes the envelope before compression, so the compressor responds to the version of the kick you intend to keep.",
+          "Transient Processor / envelope tools",
+          "Transient shaping is optional. A good sample may need none."
+        ],
+        [
+          "Compression",
+          "Control inconsistent hits or reshape punch.",
+          "Try 2:1–4:1, medium attack around 10–30 ms, release around 40–120 ms, and 1–3 dB gain reduction as a starting point.",
+          "After envelope shaping, compression can stabilize the hit without undoing the transient design.",
+          "Fruity Compressor / Fruity Limiter",
+          "If the kick is a consistent one-shot, compression may only add noise or flatten it."
+        ],
+        [
+          "Saturation / clipping",
+          "Add harmonics and manage peaks for density.",
+          "Try gentle soft clipping or saturation; begin with less than 1–2 dB of peak shaving and level-match.",
+          "After dynamics gives you a controlled signal to color. Clipping can also be used earlier as a deliberate sound-design choice.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Listen for a papery click or loss of low-end definition."
+        ],
+        [
+          "Final tone / level",
+          "A clap usually needs less low-mid body than a snare. Layer carefully and check phase.",
+          "Try a broad move around 50–100 Hz for weight or 2–5 kHz for beater; these are listening zones, not boost instructions.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Fruity Parametric EQ 2",
+          "Compare against the bass at matched loudness. Solo tone can mislead."
+        ]
+      ],
+      "genres": {
+        "Hip-hop / Trap": "Prioritize a stable fundamental and clear transient. Shape the tail so it leaves room for the 808; use clipping only if it improves translation.",
+        "EDM / House": "Tune the kick to the track when musically useful. Keep its envelope predictable for sidechain timing and low-end phase alignment.",
+        "Rock": "Preserve acoustic attack and room character. Avoid excessive clipping; use parallel compression for energy if needed.",
+        "Jazz / Acoustic": "Keep dynamics natural. Use corrective EQ and light compression only when the recording asks for it."
+      },
+      "extraNote": "A clap usually needs less low-mid body than a snare. Layer carefully and check phase."
+    },
+    {
+      "id": "rim",
+      "family": "Drums",
+      "name": "Rimshot / rim click",
+      "role": "Dry rhythmic accent and transient definition",
+      "stages": [
+        [
+          "Input trim",
+          "Set a healthy source level for rimshot / rim click.",
+          "Peak roughly -12 to -6 dBFS is a comfortable tracking/mix starting window; do not chase this number if the source is already healthy.",
+          "Input level controls every processor that follows; start with headroom.",
+          "FL Studio: Mixer fader / Fruity Balance",
+          "Avoid normalizing every sample to the same peak. Perceived loudness and transient shape matter more."
+        ],
+        [
+          "Corrective EQ",
+          "Remove inaudible rumble and solve boxiness before dynamics.",
+          "Use a steep HPF only if subsonic energy is unwanted, often around 20–30 Hz. Sweep 150–500 Hz for boxiness; use narrow cuts sparingly.",
+          "Low-frequency junk can consume headroom and trigger a compressor without contributing useful kick tone.",
+          "Fruity Parametric EQ 2",
+          "Do not automatically high-pass a kick. Its fundamental may sit below 50 Hz."
+        ],
+        [
+          "Transient shaping",
+          "Adjust the relationship between the initial hit and the body.",
+          "Add a little attack for definition, or reduce sustain when the tail masks the bass. Make small moves.",
+          "This shapes the envelope before compression, so the compressor responds to the version of the kick you intend to keep.",
+          "Transient Processor / envelope tools",
+          "Transient shaping is optional. A good sample may need none."
+        ],
+        [
+          "Compression",
+          "Control inconsistent hits or reshape punch.",
+          "Try 2:1–4:1, medium attack around 10–30 ms, release around 40–120 ms, and 1–3 dB gain reduction as a starting point.",
+          "After envelope shaping, compression can stabilize the hit without undoing the transient design.",
+          "Fruity Compressor / Fruity Limiter",
+          "If the kick is a consistent one-shot, compression may only add noise or flatten it."
+        ],
+        [
+          "Saturation / clipping",
+          "Add harmonics and manage peaks for density.",
+          "Try gentle soft clipping or saturation; begin with less than 1–2 dB of peak shaving and level-match.",
+          "After dynamics gives you a controlled signal to color. Clipping can also be used earlier as a deliberate sound-design choice.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Listen for a papery click or loss of low-end definition."
+        ],
+        [
+          "Final tone / level",
+          "Keep the transient clear; use short room or delay only if the arrangement needs depth.",
+          "Try a broad move around 50–100 Hz for weight or 2–5 kHz for beater; these are listening zones, not boost instructions.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Fruity Parametric EQ 2",
+          "Compare against the bass at matched loudness. Solo tone can mislead."
+        ]
+      ],
+      "genres": {
+        "Hip-hop / Trap": "Prioritize a stable fundamental and clear transient. Shape the tail so it leaves room for the 808; use clipping only if it improves translation.",
+        "EDM / House": "Tune the kick to the track when musically useful. Keep its envelope predictable for sidechain timing and low-end phase alignment.",
+        "Rock": "Preserve acoustic attack and room character. Avoid excessive clipping; use parallel compression for energy if needed.",
+        "Jazz / Acoustic": "Keep dynamics natural. Use corrective EQ and light compression only when the recording asks for it."
+      },
+      "extraNote": "Keep the transient clear; use short room or delay only if the arrangement needs depth."
+    },
+    {
+      "id": "perc",
+      "family": "Drums",
+      "name": "Percussion & shakers",
+      "role": "Groove detail and rhythmic movement",
+      "stages": [
+        [
+          "Input trim",
+          "Set a healthy source level for percussion & shakers.",
+          "Peak roughly -12 to -6 dBFS is a comfortable tracking/mix starting window; do not chase this number if the source is already healthy.",
+          "Input level controls every processor that follows; start with headroom.",
+          "FL Studio: Mixer fader / Fruity Balance",
+          "Avoid normalizing every sample to the same peak. Perceived loudness and transient shape matter more."
+        ],
+        [
+          "Corrective EQ",
+          "Remove inaudible rumble and solve boxiness before dynamics.",
+          "Use a steep HPF only if subsonic energy is unwanted, often around 20–30 Hz. Sweep 150–500 Hz for boxiness; use narrow cuts sparingly.",
+          "Low-frequency junk can consume headroom and trigger a compressor without contributing useful kick tone.",
+          "Fruity Parametric EQ 2",
+          "Do not automatically high-pass a kick. Its fundamental may sit below 50 Hz."
+        ],
+        [
+          "Transient shaping",
+          "Adjust the relationship between the initial hit and the body.",
+          "Add a little attack for definition, or reduce sustain when the tail masks the bass. Make small moves.",
+          "This shapes the envelope before compression, so the compressor responds to the version of the kick you intend to keep.",
+          "Transient Processor / envelope tools",
+          "Transient shaping is optional. A good sample may need none."
+        ],
+        [
+          "Compression",
+          "Control inconsistent hits or reshape punch.",
+          "Try 2:1–4:1, medium attack around 10–30 ms, release around 40–120 ms, and 1–3 dB gain reduction as a starting point.",
+          "After envelope shaping, compression can stabilize the hit without undoing the transient design.",
+          "Fruity Compressor / Fruity Limiter",
+          "If the kick is a consistent one-shot, compression may only add noise or flatten it."
+        ],
+        [
+          "Saturation / clipping",
+          "Add harmonics and manage peaks for density.",
+          "Try gentle soft clipping or saturation; begin with less than 1–2 dB of peak shaving and level-match.",
+          "After dynamics gives you a controlled signal to color. Clipping can also be used earlier as a deliberate sound-design choice.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Listen for a papery click or loss of low-end definition."
+        ],
+        [
+          "Final tone / level",
+          "Velocity and timing usually create more life than heavy compression.",
+          "Try a broad move around 50–100 Hz for weight or 2–5 kHz for beater; these are listening zones, not boost instructions.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Fruity Parametric EQ 2",
+          "Compare against the bass at matched loudness. Solo tone can mislead."
+        ]
+      ],
+      "genres": {
+        "Hip-hop / Trap": "Prioritize a stable fundamental and clear transient. Shape the tail so it leaves room for the 808; use clipping only if it improves translation.",
+        "EDM / House": "Tune the kick to the track when musically useful. Keep its envelope predictable for sidechain timing and low-end phase alignment.",
+        "Rock": "Preserve acoustic attack and room character. Avoid excessive clipping; use parallel compression for energy if needed.",
+        "Jazz / Acoustic": "Keep dynamics natural. Use corrective EQ and light compression only when the recording asks for it."
+      },
+      "extraNote": "Velocity and timing usually create more life than heavy compression."
+    },
+    {
+      "id": "drumroom",
+      "family": "Drums",
+      "name": "Drum room / overheads",
+      "role": "Kit depth, realism and cymbal picture",
+      "stages": [
+        [
+          "Input trim",
+          "Set a healthy source level for drum room / overheads.",
+          "Peak roughly -12 to -6 dBFS is a comfortable tracking/mix starting window; do not chase this number if the source is already healthy.",
+          "Input level controls every processor that follows; start with headroom.",
+          "FL Studio: Mixer fader / Fruity Balance",
+          "Avoid normalizing every sample to the same peak. Perceived loudness and transient shape matter more."
+        ],
+        [
+          "Corrective EQ",
+          "Remove inaudible rumble and solve boxiness before dynamics.",
+          "Use a steep HPF only if subsonic energy is unwanted, often around 20–30 Hz. Sweep 150–500 Hz for boxiness; use narrow cuts sparingly.",
+          "Low-frequency junk can consume headroom and trigger a compressor without contributing useful kick tone.",
+          "Fruity Parametric EQ 2",
+          "Do not automatically high-pass a kick. Its fundamental may sit below 50 Hz."
+        ],
+        [
+          "Transient shaping",
+          "Adjust the relationship between the initial hit and the body.",
+          "Add a little attack for definition, or reduce sustain when the tail masks the bass. Make small moves.",
+          "This shapes the envelope before compression, so the compressor responds to the version of the kick you intend to keep.",
+          "Transient Processor / envelope tools",
+          "Transient shaping is optional. A good sample may need none."
+        ],
+        [
+          "Compression",
+          "Control inconsistent hits or reshape punch.",
+          "Try 2:1–4:1, medium attack around 10–30 ms, release around 40–120 ms, and 1–3 dB gain reduction as a starting point.",
+          "After envelope shaping, compression can stabilize the hit without undoing the transient design.",
+          "Fruity Compressor / Fruity Limiter",
+          "If the kick is a consistent one-shot, compression may only add noise or flatten it."
+        ],
+        [
+          "Saturation / clipping",
+          "Add harmonics and manage peaks for density.",
+          "Try gentle soft clipping or saturation; begin with less than 1–2 dB of peak shaving and level-match.",
+          "After dynamics gives you a controlled signal to color. Clipping can also be used earlier as a deliberate sound-design choice.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Listen for a papery click or loss of low-end definition."
+        ],
+        [
+          "Final tone / level",
+          "Phase and stereo perspective come before EQ; avoid compressing room mics until the kit pumps unintentionally.",
+          "Try a broad move around 50–100 Hz for weight or 2–5 kHz for beater; these are listening zones, not boost instructions.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Fruity Parametric EQ 2",
+          "Compare against the bass at matched loudness. Solo tone can mislead."
+        ]
+      ],
+      "genres": {
+        "Hip-hop / Trap": "Prioritize a stable fundamental and clear transient. Shape the tail so it leaves room for the 808; use clipping only if it improves translation.",
+        "EDM / House": "Tune the kick to the track when musically useful. Keep its envelope predictable for sidechain timing and low-end phase alignment.",
+        "Rock": "Preserve acoustic attack and room character. Avoid excessive clipping; use parallel compression for energy if needed.",
+        "Jazz / Acoustic": "Keep dynamics natural. Use corrective EQ and light compression only when the recording asks for it."
+      },
+      "extraNote": "Phase and stereo perspective come before EQ; avoid compressing room mics until the kit pumps unintentionally."
+    },
+    {
+      "id": "808",
+      "family": "Bass",
+      "name": "808 bass",
+      "role": "Sub weight, melodic bass and rhythmic impact",
+      "stages": [
+        [
+          "Tune / envelope",
+          "Set a healthy source level for 808 bass.",
+          "Confirm root note and pitch envelope; check slides/portamento and tail length.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Sampler pitch / tuner",
+          "Check every note and slide, not only the first hit."
+        ],
+        [
+          "Gain / trim",
+          "Set level before processing.",
+          "Keep headroom for saturation and clipping stages.",
+          "Input level determines how hard distortion responds.",
+          "Fruity Balance",
+          "Avoid hitting every plugin at maximum input just because it sounds louder."
+        ],
+        [
+          "Corrective EQ",
+          "Remove unwanted rumble and control low-mid buildup.",
+          "Inspect 20–35 Hz for unnecessary energy and 150–400 Hz for mud.",
+          "Before saturation, so unwanted bands do not become harmonically louder.",
+          "Parametric EQ 2",
+          "Do not high-pass the fundamental away."
+        ],
+        [
+          "Saturation / distortion",
+          "Generate upper harmonics so the 808 reads on small speakers.",
+          "Try soft clip, waveshaping or parallel distortion; blend to taste.",
+          "Before final peak control so the added harmonics are included in the final envelope.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Use a clean parallel layer if distortion destroys pitch clarity."
+        ],
+        [
+          "Envelope / compression",
+          "Control note sustain and variation.",
+          "Often unnecessary for consistent one-shots; if needed, 2:1–3:1 with modest GR.",
+          "After tone creation to control the processed signal.",
+          "Fruity Compressor / sampler envelope",
+          "Volume envelope automation may be cleaner than compression."
+        ],
+        [
+          "Clip / kick relationship",
+          "Tune every note and slide. Distortion creates translation harmonics, but protect the fundamental.",
+          "Start with gentle 1–2 dB peak shaving; sidechain or automate only the overlapping region.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Soft Clipper / Fruity Limiter sidechain",
+          "Do not clip so hard that different notes lose their musical identity."
+        ]
+      ],
+      "genres": {
+        "Trap": "Slides, saturation and clipping are common. Keep the fundamental recognizable and manage kick overlap intentionally.",
+        "Drill": "Pay attention to glide timing and note transitions. Use controlled distortion to retain articulation.",
+        "EDM": "A clean sub core and tempo-aware ducking may work better than heavy clipping.",
+        "Pop": "Shorten tails where needed and control note-to-note consistency."
+      },
+      "extraNote": "Tune every note and slide. Distortion creates translation harmonics, but protect the fundamental."
+    },
+    {
+      "id": "reese",
+      "family": "Bass",
+      "name": "Reese / mid-bass",
+      "role": "Wide harmonic bass texture",
+      "stages": [
+        [
+          "Tune / envelope",
+          "Set a healthy source level for reese / mid-bass.",
+          "Confirm root note and pitch envelope; check slides/portamento and tail length.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Sampler pitch / tuner",
+          "Check every note and slide, not only the first hit."
+        ],
+        [
+          "Gain / trim",
+          "Set level before processing.",
+          "Keep headroom for saturation and clipping stages.",
+          "Input level determines how hard distortion responds.",
+          "Fruity Balance",
+          "Avoid hitting every plugin at maximum input just because it sounds louder."
+        ],
+        [
+          "Corrective EQ",
+          "Remove unwanted rumble and control low-mid buildup.",
+          "Inspect 20–35 Hz for unnecessary energy and 150–400 Hz for mud.",
+          "Before saturation, so unwanted bands do not become harmonically louder.",
+          "Parametric EQ 2",
+          "Do not high-pass the fundamental away."
+        ],
+        [
+          "Saturation / distortion",
+          "Generate upper harmonics so the 808 reads on small speakers.",
+          "Try soft clip, waveshaping or parallel distortion; blend to taste.",
+          "Before final peak control so the added harmonics are included in the final envelope.",
+          "Fruity Soft Clipper / Waveshaper / Blood Overdrive",
+          "Use a clean parallel layer if distortion destroys pitch clarity."
+        ],
+        [
+          "Envelope / compression",
+          "Control note sustain and variation.",
+          "Often unnecessary for consistent one-shots; if needed, 2:1–3:1 with modest GR.",
+          "After tone creation to control the processed signal.",
+          "Fruity Compressor / sampler envelope",
+          "Volume envelope automation may be cleaner than compression."
+        ],
+        [
+          "Clip / kick relationship",
+          "Keep sub content centered and widen only upper harmonics; check mono.",
+          "Start with gentle 1–2 dB peak shaving; sidechain or automate only the overlapping region.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Soft Clipper / Fruity Limiter sidechain",
+          "Do not clip so hard that different notes lose their musical identity."
+        ]
+      ],
+      "genres": {
+        "Trap": "Slides, saturation and clipping are common. Keep the fundamental recognizable and manage kick overlap intentionally.",
+        "Drill": "Pay attention to glide timing and note transitions. Use controlled distortion to retain articulation.",
+        "EDM": "A clean sub core and tempo-aware ducking may work better than heavy clipping.",
+        "Pop": "Shorten tails where needed and control note-to-note consistency."
+      },
+      "extraNote": "Keep sub content centered and widen only upper harmonics; check mono."
+    },
+    {
+      "id": "organ",
+      "family": "Keys & Synths",
+      "name": "Organ",
+      "role": "Sustained harmonic bed and rhythmic chord pulse",
+      "stages": [
+        [
+          "Input / tone source",
+          "Set a healthy source level for organ.",
+          "Choose tine/amp character and input level before corrective processing.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Instrument controls / amp sim",
+          "Do not try to EQ a source tone that should be changed at the instrument."
+        ],
+        [
+          "Corrective EQ",
+          "Remove low buildup and resonances.",
+          "HPF 60–100 Hz if needed; inspect 200–500 Hz for mud.",
+          "Before compression and saturation to avoid exaggerating unwanted frequencies.",
+          "Parametric EQ 2",
+          "Retain warmth if the part is meant to carry the harmony."
+        ],
+        [
+          "Compression",
+          "Smooth chord dynamics without removing touch.",
+          "Try 2:1–3:1, attack 15–30 ms, release 60–150 ms, 1–3 dB GR.",
+          "After cleanup; keep performance dynamics intact.",
+          "Fruity Compressor",
+          "Use light compression for expressive Rhodes parts."
+        ],
+        [
+          "Saturation",
+          "Add tape, tube or amp warmth.",
+          "Subtle drive; level-match output.",
+          "After dynamics for stable coloration, or before if you want compression to react to saturation.",
+          "Blood Overdrive / Waveshaper",
+          "Low-mid saturation can make a mix cloudy."
+        ],
+        [
+          "Modulation",
+          "Create chorus, tremolo or stereo movement.",
+          "Slow chorus with moderate depth; tempo-synced tremolo for rhythmic parts.",
+          "After core tone and dynamics so modulation does not confuse corrective processing.",
+          "Fruity Chorus / Love Philter",
+          "Check mono compatibility, especially on wide chorus patches."
+        ],
+        [
+          "Send FX",
+          "Use drawbar/rotary character at the source; avoid unnecessary compression on a steady patch.",
+          "Filter returns and keep the dry attack clear.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Reeverb 2 / Delay 3 sends",
+          "Automate send level between sections."
+        ]
+      ],
+      "genres": {
+        "Neo-soul": "Warm saturation, subtle chorus and expressive dynamics; preserve touch and chord detail.",
+        "Lo-fi": "Tape color, filtering and gentle pitch modulation can create movement.",
+        "House": "Tremolo and tempo-synced delay can make chords rhythmically active.",
+        "Pop": "Keep width controlled so the vocal remains centered."
+      },
+      "extraNote": "Use drawbar/rotary character at the source; avoid unnecessary compression on a steady patch."
+    },
+    {
+      "id": "synthkeys",
+      "family": "Keys & Synths",
+      "name": "Synth keys / digital piano",
+      "role": "Harmonic support and percussive chord texture",
+      "stages": [
+        [
+          "Input / tone source",
+          "Set a healthy source level for synth keys / digital piano.",
+          "Choose tine/amp character and input level before corrective processing.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Instrument controls / amp sim",
+          "Do not try to EQ a source tone that should be changed at the instrument."
+        ],
+        [
+          "Corrective EQ",
+          "Remove low buildup and resonances.",
+          "HPF 60–100 Hz if needed; inspect 200–500 Hz for mud.",
+          "Before compression and saturation to avoid exaggerating unwanted frequencies.",
+          "Parametric EQ 2",
+          "Retain warmth if the part is meant to carry the harmony."
+        ],
+        [
+          "Compression",
+          "Smooth chord dynamics without removing touch.",
+          "Try 2:1–3:1, attack 15–30 ms, release 60–150 ms, 1–3 dB GR.",
+          "After cleanup; keep performance dynamics intact.",
+          "Fruity Compressor",
+          "Use light compression for expressive Rhodes parts."
+        ],
+        [
+          "Saturation",
+          "Add tape, tube or amp warmth.",
+          "Subtle drive; level-match output.",
+          "After dynamics for stable coloration, or before if you want compression to react to saturation.",
+          "Blood Overdrive / Waveshaper",
+          "Low-mid saturation can make a mix cloudy."
+        ],
+        [
+          "Modulation",
+          "Create chorus, tremolo or stereo movement.",
+          "Slow chorus with moderate depth; tempo-synced tremolo for rhythmic parts.",
+          "After core tone and dynamics so modulation does not confuse corrective processing.",
+          "Fruity Chorus / Love Philter",
+          "Check mono compatibility, especially on wide chorus patches."
+        ],
+        [
+          "Send FX",
+          "Control attack and stereo width; leave space for vocal intelligibility.",
+          "Filter returns and keep the dry attack clear.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Reeverb 2 / Delay 3 sends",
+          "Automate send level between sections."
+        ]
+      ],
+      "genres": {
+        "Neo-soul": "Warm saturation, subtle chorus and expressive dynamics; preserve touch and chord detail.",
+        "Lo-fi": "Tape color, filtering and gentle pitch modulation can create movement.",
+        "House": "Tremolo and tempo-synced delay can make chords rhythmically active.",
+        "Pop": "Keep width controlled so the vocal remains centered."
+      },
+      "extraNote": "Control attack and stereo width; leave space for vocal intelligibility."
+    },
+    {
+      "id": "gtrbus",
+      "family": "Guitars",
+      "name": "Guitar bus",
+      "role": "Cohesion and shared tone across guitar layers",
+      "stages": [
+        [
+          "Source / phase / noise",
+          "Set a healthy source level for guitar bus.",
+          "For multiple mics, compare polarity and timing; record healthy peaks without clipping.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Fruity Balance / polarity tools",
+          "Do not time-align mics automatically; listen for the most natural result."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble, boom and boxiness.",
+          "HPF often 70–120 Hz depending on tuning; inspect 150–400 Hz for boom and 2–5 kHz for pick harshness.",
+          "Before compression so low-frequency thumps do not dominate gain reduction.",
+          "Parametric EQ 2",
+          "The guitar may need its body to blend with bass and vocal."
+        ],
+        [
+          "Compression",
+          "Even out strumming and fingerpicking.",
+          "Try 2:1–3:1, attack 15–30 ms, release 50–120 ms, 2–4 dB GR.",
+          "After cleanup; preserve pick transient and natural movement.",
+          "Fruity Compressor",
+          "Clip gain can be more transparent than heavy compression."
+        ],
+        [
+          "Dynamic EQ / de-ess",
+          "Control pick attack, string squeaks and sharp resonances.",
+          "Target 2–5 kHz for pick harshness; locate squeaks by listening rather than assuming a fixed frequency.",
+          "After compression if the compressor reveals squeaks or sharp attacks.",
+          "Maximus / dynamic EQ",
+          "Do not de-ess the entire high end into dullness."
+        ],
+        [
+          "Tonal EQ",
+          "Add articulation or air if the part needs it.",
+          "Try 3–6 kHz for articulation and 8–12 kHz for air, with broad subtle moves.",
+          "After dynamics for final context-aware tone.",
+          "Parametric EQ 2",
+          "Check in the full arrangement with vocal and cymbals."
+        ],
+        [
+          "Space send",
+          "Use broad EQ and gentle glue; solve individual resonance issues on tracks.",
+          "Short room for realism; plate for polish; filtered tempo delay for rhythmic parts.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Reeverb 2 / Delay 3",
+          "Too much stereo reverb can blur strumming."
+        ]
+      ],
+      "genres": {
+        "Folk": "Natural dynamics, stereo image and room tone are priorities.",
+        "Pop": "Controlled low end and bright but smooth articulation.",
+        "Country": "Preserve pick definition and rhythmic precision.",
+        "Indie / Shoegaze": "Modulation and long reverb can turn strums into a sustained texture."
+      },
+      "extraNote": "Use broad EQ and gentle glue; solve individual resonance issues on tracks."
+    },
+    {
+      "id": "stringshort",
+      "family": "Orchestral",
+      "name": "Short strings / staccato",
+      "role": "Rhythmic orchestral punctuation",
+      "stages": [
+        [
+          "Articulation / expression",
+          "Set a healthy source level for short strings / staccato.",
+          "Set legato, staccato, sustain, bow changes and velocity layers before mix processing.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Library articulation / expression controls",
+          "Use expression and modulation lanes; static velocity can make strings sound synthetic."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and low-mid buildup.",
+          "HPF roughly 60–120 Hz depending on register; inspect 200–500 Hz for mud.",
+          "Cleanup before dynamics keeps the compressor from reacting to unnecessary low energy.",
+          "Parametric EQ 2",
+          "Do not thin low cellos/basses just because the section is dense."
+        ],
+        [
+          "Dynamic control",
+          "Smooth inconsistent samples while preserving swells.",
+          "Gentle 1.5:1–2.5:1, often 1–3 dB GR; automate swells where possible.",
+          "After cleanup; expressive volume automation often beats compression.",
+          "Fruity Compressor / automation",
+          "Do not flatten crescendos that create the emotion."
+        ],
+        [
+          "Tonal shaping",
+          "Balance warmth, bow detail and air.",
+          "Listen around 200–400 Hz for warmth, 2–5 kHz for bow detail, 8–12 kHz for air.",
+          "After dynamics, because compression may change perceived brightness.",
+          "Parametric EQ 2",
+          "Avoid boosting every string section into the same presence range."
+        ],
+        [
+          "Saturation / width",
+          "Add subtle density and manage section placement.",
+          "Gentle tape color; preserve section panning and avoid excessive widening.",
+          "After tone shaping; spatial image should reflect the orchestration.",
+          "Waveshaper / Stereo Shaper",
+          "Use section panning before stereo widening."
+        ],
+        [
+          "Hall / stage send",
+          "Shape transient and note length at the source; short room can unify samples.",
+          "Scoring-stage or hall; pre-delay 20–50 ms; filter low end from the return.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Convolver / Reeverb 2 send",
+          "A common reverb can glue separate libraries together."
+        ]
+      ],
+      "genres": {
+        "Cinematic": "Long halls, dynamic swells and layered depth. Automate expression and reverb sends across the cue.",
+        "Pop": "Controlled width and shorter reverb; keep the vocal in front.",
+        "Hip-hop": "Filtered string stabs, saturation and rhythmic chops can make orchestral parts sit in a beat.",
+        "Classical": "Preserve dynamics, natural section placement and realistic hall perspective."
+      },
+      "extraNote": "Shape transient and note length at the source; short room can unify samples."
+    },
+    {
+      "id": "brassstab",
+      "family": "Orchestral",
+      "name": "Brass stabs",
+      "role": "Powerful rhythmic accent",
+      "stages": [
+        [
+          "Articulation / expression",
+          "Set a healthy source level for brass stabs.",
+          "Set legato, staccato, sustain, bow changes and velocity layers before mix processing.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Library articulation / expression controls",
+          "Use expression and modulation lanes; static velocity can make strings sound synthetic."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and low-mid buildup.",
+          "HPF roughly 60–120 Hz depending on register; inspect 200–500 Hz for mud.",
+          "Cleanup before dynamics keeps the compressor from reacting to unnecessary low energy.",
+          "Parametric EQ 2",
+          "Do not thin low cellos/basses just because the section is dense."
+        ],
+        [
+          "Dynamic control",
+          "Smooth inconsistent samples while preserving swells.",
+          "Gentle 1.5:1–2.5:1, often 1–3 dB GR; automate swells where possible.",
+          "After cleanup; expressive volume automation often beats compression.",
+          "Fruity Compressor / automation",
+          "Do not flatten crescendos that create the emotion."
+        ],
+        [
+          "Tonal shaping",
+          "Balance warmth, bow detail and air.",
+          "Listen around 200–400 Hz for warmth, 2–5 kHz for bow detail, 8–12 kHz for air.",
+          "After dynamics, because compression may change perceived brightness.",
+          "Parametric EQ 2",
+          "Avoid boosting every string section into the same presence range."
+        ],
+        [
+          "Saturation / width",
+          "Add subtle density and manage section placement.",
+          "Gentle tape color; preserve section panning and avoid excessive widening.",
+          "After tone shaping; spatial image should reflect the orchestration.",
+          "Waveshaper / Stereo Shaper",
+          "Use section panning before stereo widening."
+        ],
+        [
+          "Hall / stage send",
+          "Control transient and upper-mid harshness; automate accents rather than crushing the bus.",
+          "Scoring-stage or hall; pre-delay 20–50 ms; filter low end from the return.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Convolver / Reeverb 2 send",
+          "A common reverb can glue separate libraries together."
+        ]
+      ],
+      "genres": {
+        "Cinematic": "Long halls, dynamic swells and layered depth. Automate expression and reverb sends across the cue.",
+        "Pop": "Controlled width and shorter reverb; keep the vocal in front.",
+        "Hip-hop": "Filtered string stabs, saturation and rhythmic chops can make orchestral parts sit in a beat.",
+        "Classical": "Preserve dynamics, natural section placement and realistic hall perspective."
+      },
+      "extraNote": "Control transient and upper-mid harshness; automate accents rather than crushing the bus."
+    },
+    {
+      "id": "noise",
+      "family": "FX & textures",
+      "name": "Noise / vinyl / field texture",
+      "role": "Atmosphere, transitions and perceived depth",
+      "stages": [
+        [
+          "Articulation / expression",
+          "Set a healthy source level for noise / vinyl / field texture.",
+          "Set legato, staccato, sustain, bow changes and velocity layers before mix processing.",
+          "Input level controls every processor that follows; start with headroom.",
+          "Library articulation / expression controls",
+          "Use expression and modulation lanes; static velocity can make strings sound synthetic."
+        ],
+        [
+          "Corrective EQ",
+          "Remove rumble and low-mid buildup.",
+          "HPF roughly 60–120 Hz depending on register; inspect 200–500 Hz for mud.",
+          "Cleanup before dynamics keeps the compressor from reacting to unnecessary low energy.",
+          "Parametric EQ 2",
+          "Do not thin low cellos/basses just because the section is dense."
+        ],
+        [
+          "Dynamic control",
+          "Smooth inconsistent samples while preserving swells.",
+          "Gentle 1.5:1–2.5:1, often 1–3 dB GR; automate swells where possible.",
+          "After cleanup; expressive volume automation often beats compression.",
+          "Fruity Compressor / automation",
+          "Do not flatten crescendos that create the emotion."
+        ],
+        [
+          "Tonal shaping",
+          "Balance warmth, bow detail and air.",
+          "Listen around 200–400 Hz for warmth, 2–5 kHz for bow detail, 8–12 kHz for air.",
+          "After dynamics, because compression may change perceived brightness.",
+          "Parametric EQ 2",
+          "Avoid boosting every string section into the same presence range."
+        ],
+        [
+          "Saturation / width",
+          "Add subtle density and manage section placement.",
+          "Gentle tape color; preserve section panning and avoid excessive widening.",
+          "After tone shaping; spatial image should reflect the orchestration.",
+          "Waveshaper / Stereo Shaper",
+          "Use section panning before stereo widening."
+        ],
+        [
+          "Hall / stage send",
+          "High-pass/low-pass to fit the arrangement; automate level and stereo movement.",
+          "Scoring-stage or hall; pre-delay 20–50 ms; filter low end from the return.",
+          "Make the final placement decision in the full arrangement, then check mono and level-match.",
+          "Convolver / Reeverb 2 send",
+          "A common reverb can glue separate libraries together."
+        ]
+      ],
+      "genres": {
+        "Cinematic": "Long halls, dynamic swells and layered depth. Automate expression and reverb sends across the cue.",
+        "Pop": "Controlled width and shorter reverb; keep the vocal in front.",
+        "Hip-hop": "Filtered string stabs, saturation and rhythmic chops can make orchestral parts sit in a beat.",
+        "Classical": "Preserve dynamics, natural section placement and realistic hall perspective."
+      },
+      "extraNote": "High-pass/low-pass to fit the arrangement; automate level and stereo movement."
+    }
+  ],
+  "genres": {
+    "Hip-hop / Trap": {
+      "focus": "808/kick relationship, vocal priority, punchy drums and intentional saturation.",
+      "moves": [
+        "Tune 808s and check every slide against the key.",
+        "Use parallel compression or clipping for density, not as a default on every track.",
+        "Carve space by arrangement first; keep the lead vocal intelligible.",
+        "Use short delays and filtered sends for vocal/ad-lib depth."
+      ],
+      "watch": "Low-end masking, over-bright hats, clipped master bus and over-compressed vocals."
+    },
+    "Pop": {
+      "focus": "Clear vocal hierarchy, controlled low end, polished transients and consistent section energy.",
+      "moves": [
+        "Automate vocal and instrument levels between sections.",
+        "Use dynamic EQ for changing masking rather than permanent deep cuts.",
+        "Keep reverbs and delays filtered and tempo-aware.",
+        "Use bus processing lightly; make chorus lift through arrangement and automation."
+      ],
+      "watch": "Too many wide layers, competing midrange hooks and reverb washing out consonants."
+    },
+    "Rock": {
+      "focus": "Performance, amp tone, drum impact and believable stereo layering.",
+      "moves": [
+        "Get amp/cab and mic balance right before detailed EQ.",
+        "Double-track rhythm guitars with separate performances for width.",
+        "Use drum-room/parallel compression to add energy without flattening close mics.",
+        "Automate lead guitars and vocal rides."
+      ],
+      "watch": "Over-scooped guitars, cymbal harshness and bass/kick masking."
+    },
+    "Metal": {
+      "focus": "Tight low end, controlled transient peaks, dense guitars and vocal cut.",
+      "moves": [
+        "Edit performances tightly while retaining musical feel.",
+        "High-pass guitars only enough to remove unnecessary lows; do not hollow the low mids.",
+        "Use dynamic EQ for harsh amp resonances.",
+        "Keep kick and bass roles distinct in frequency and envelope."
+      ],
+      "watch": "Excessive clipping, brittle cymbals, over-gated tails and guitars with no midrange identity."
+    },
+    "EDM": {
+      "focus": "Kick/sub relationship, transient precision, automation and intentional sidechain movement.",
+      "moves": [
+        "Design kick and bass as a pair and check phase/tuning.",
+        "Time sidechain release to the groove, not a generic preset.",
+        "Use automation and filter movement to build/drop energy.",
+        "Keep low frequencies centered and check mono."
+      ],
+      "watch": "Uncontrolled sub peaks, sidechain pumping that fights the groove and wide low-end phase issues."
+    },
+    "House": {
+      "focus": "Groove, kick/bass pocket, percussion and evolving repetition.",
+      "moves": [
+        "Prioritize timing and velocity on percussion.",
+        "Use sidechain only to create the intended pocket.",
+        "Use short rooms, filtered delays and gradual automation.",
+        "Keep bass stable and hats bright but not brittle."
+      ],
+      "watch": "Overly static loops, long tails masking the next hit and crowded low mids."
+    },
+    "R&B / Neo-soul": {
+      "focus": "Warmth, expressive dynamics, pocket and vocal intimacy.",
+      "moves": [
+        "Preserve performance dynamics and use automation for phrase shaping.",
+        "Use tasteful saturation on keys/bass and gentle bus compression.",
+        "Leave space around vocal consonants and ad-libs.",
+        "Use plate/room reverbs and tempo delays with pre-delay."
+      ],
+      "watch": "Over-polished timing, excessive top-end boosts and muddy Rhodes/guitar overlap."
+    },
+    "Shoegaze": {
+      "focus": "Layered guitars, modulation, sustained ambience and controlled density.",
+      "moves": [
+        "Build layers with different voicings/registers rather than identical copies.",
+        "Use sends for long reverb and automate feedback/tails.",
+        "Keep a focused midrange anchor among wide layers.",
+        "Use filters and volume automation to create movement."
+      ],
+      "watch": "Everything wide and wet, loss of transient contrast and low-mid reverb buildup."
+    },
+    "Ambient": {
+      "focus": "Evolution over time, space, texture and intentional negative space.",
+      "moves": [
+        "Automate parameters slowly across long sections.",
+        "Use parallel texture layers and filtered long tails.",
+        "Preserve a stable low-frequency anchor if the piece needs one.",
+        "Print evolving effects when they become part of the performance."
+      ],
+      "watch": "Unintentional clipping from stacked tails and masking from endless sustained layers."
+    },
+    "Lo-fi": {
+      "focus": "Texture, constrained bandwidth, gentle instability and intimate dynamics.",
+      "moves": [
+        "Use saturation/noise as an aesthetic layer, not a blanket fix.",
+        "Filter intentionally while retaining a clear musical anchor.",
+        "Try subtle wow/flutter and softened transients.",
+        "Keep drums and bass readable under texture."
+      ],
+      "watch": "Excessive noise, muddy low mids and harsh digital clipping disguised as warmth."
+    },
+    "Orchestral / Cinematic": {
+      "focus": "Dynamic storytelling, articulation, depth and realistic section placement.",
+      "moves": [
+        "Program articulations and expression before mixing.",
+        "Use shared hall/stage sends to unify libraries.",
+        "Preserve crescendos and automate expression instead of flattening them.",
+        "Pan sections deliberately and check depth with pre-delay."
+      ],
+      "watch": "Static MIDI dynamics, too much reverb on every source and frequency crowding in low strings/brass."
+    }
+  },
+  "plugins": [
+    [
+      "Corrective EQ",
+      "Remove a specific problem such as rumble, boxiness or a narrow resonance.",
+      "Usually early, before compression if the problem frequency is driving the detector.",
+      "Fruity Parametric EQ 2",
+      "Do not cut just because a frequency is present. Identify a problem in context."
+    ],
+    [
+      "Tonal EQ",
+      "Shape broad warmth, presence, brightness or weight after the source is controlled.",
+      "Often later in the chain, after dynamics, for final mix balance.",
+      "Fruity Parametric EQ 2",
+      "A broad tonal move is not the same as surgical cleanup."
+    ],
+    [
+      "Compressor",
+      "Reduce dynamic range, control peaks or shape sustain and punch.",
+      "After cleanup; before or after saturation depending on how you want the detector to react.",
+      "Fruity Compressor / Fruity Limiter",
+      "Attack controls how much transient passes; release controls recovery. Time them to the performance."
+    ],
+    [
+      "Multiband compressor",
+      "Control dynamics in selected frequency bands independently.",
+      "Usually later, after broad tone shaping, when a specific band is unstable.",
+      "Maximus",
+      "Not a substitute for good arrangement or corrective EQ. Easy to overuse."
+    ],
+    [
+      "De-esser / dynamic EQ",
+      "Reduce sibilance or harsh peaks only when they occur.",
+      "After compression if compression reveals more sibilance; before if it is driving the compressor.",
+      "Maximus / dynamic EQ plugin",
+      "Find the actual harsh band for that voice or source; do not assume one frequency fits all."
+    ],
+    [
+      "Gate / expander",
+      "Reduce noise or bleed between wanted events.",
+      "Early, after input gain is stable; before heavy compression.",
+      "Fruity Limiter gate / expander",
+      "Use hold and release to preserve natural tails. Clip gain can be more transparent."
+    ],
+    [
+      "Transient shaper",
+      "Change attack and sustain independently.",
+      "Often before compression when shaping the envelope that the compressor will react to.",
+      "Transient Processor / envelope controls",
+      "It is not a compressor. It can exaggerate bleed and noise."
+    ],
+    [
+      "Saturation / tape",
+      "Add harmonics, density and non-linear character.",
+      "Before compression for the compressor to react to color; after compression for more stable coloration.",
+      "Fruity Waveshaper / Blood Overdrive / Soft Clipper",
+      "Level-match bypass. Harmonics can increase perceived loudness."
+    ],
+    [
+      "Clipper",
+      "Control brief peaks with intentional waveform clipping.",
+      "Often late on drum/bass channels or buses, after tone and dynamics.",
+      "Fruity Soft Clipper / Waveshaper",
+      "Listen for flattened transients, brittle distortion and lost groove."
+    ],
+    [
+      "Limiter",
+      "Set a ceiling and control peaks; sometimes used for sound design.",
+      "Usually last in a channel/bus chain when peak containment is needed.",
+      "Fruity Limiter",
+      "A limiter is not a loudness button. Leave mastering headroom when appropriate."
+    ],
+    [
+      "Chorus / modulation",
+      "Create pitch/time variation and stereo movement.",
+      "After corrective processing; often before send effects.",
+      "Fruity Chorus / Phaser / Flanger",
+      "Check mono compatibility and avoid widening essential low frequencies."
+    ],
+    [
+      "Delay",
+      "Create rhythmic repeats and depth.",
+      "Usually on a send or late in an insert chain; filter the feedback path.",
+      "Fruity Delay 3",
+      "Tempo-sync, filter repeats and automate throws rather than leaving every delay always on."
+    ],
+    [
+      "Reverb",
+      "Place a source in a room or create an effect tail.",
+      "Usually on a send; filter the return and use pre-delay to preserve attack.",
+      "Fruity Reeverb 2 / Convolver",
+      "Too much low-mid reverb causes mud. A send gives shared space and easier automation."
+    ],
+    [
+      "Stereo / mid-side",
+      "Adjust width and center/side balance.",
+      "After tonal/dynamic work, before final ambience if the image needs shaping.",
+      "Fruity Stereo Shaper / stereo tools",
+      "Check mono fold-down and correlation. Width is not automatically separation."
+    ],
+    [
+      "Sidechain / volume shaper",
+      "Create space or rhythmic pumping using a trigger or envelope.",
+      "At the point where the mix interaction is most useful, commonly late in the bass/pad chain.",
+      "Fruity Limiter sidechain / automation clips",
+      "Duck only as much as needed. Release timing determines groove."
+    ]
+  ],
+  "troubles": [
+    [
+      "Muddy low end",
+      "Kick, bass and low keys overlap; too much subsonic energy or reverb.",
+      "Mute layers to identify the conflict; compare kick/bass envelopes; inspect 100–400 Hz.",
+      "Choose distinct kick and bass roles; shorten tails; use small dynamic dips only where overlap occurs.",
+      "Do not automatically high-pass every track or carve a huge smile-shaped EQ."
+    ],
+    [
+      "Harsh / brittle top end",
+      "Stacked bright samples, distortion, resonances or excessive high-shelf boosts.",
+      "Listen at low volume; identify whether harshness is constant or only on certain hits/notes.",
+      "Use a narrow static cut for a fixed resonance or dynamic EQ for changing peaks; reduce saturation if needed.",
+      "Do not solve every harshness issue by turning down the entire instrument."
+    ],
+    [
+      "Weak kick",
+      "Poor sample choice, phase cancellation, excessive compression or masking.",
+      "Compare kick alone and with bass; check polarity and transient shape; level-match bypass.",
+      "Try a better source, adjust phase/timing, reduce competing low end or restore attack.",
+      "Do not just boost 60 Hz; the issue may be transient or phase."
+    ],
+    [
+      "Bass disappears on phone speakers",
+      "Mostly fundamental/sub with few upper harmonics.",
+      "Audition quietly and on small speakers; inspect harmonic content.",
+      "Add subtle parallel saturation or a mid-bass layer while keeping the sub stable.",
+      "Do not distort the entire low end until the fundamental becomes unstable."
+    ],
+    [
+      "Vocal buried in instruments",
+      "Arrangement density and competing midrange, not necessarily a vocal-level problem.",
+      "Mute layers, identify parts masking consonants and vocal body.",
+      "Rearrange registers, automate competing parts, use small dynamic EQ dips triggered by vocal if needed.",
+      "Avoid reflexively boosting vocal presence or crushing the instrumental bus."
+    ],
+    [
+      "Reverb mud",
+      "Too much low-mid energy in returns, long decay or too many independent spaces.",
+      "Mute sends one at a time; listen to the reverb return solo and in context.",
+      "High-pass/low-pass returns, shorten decay, add pre-delay or share a common room.",
+      "Do not put a long reverb insert on every track by default."
+    ],
+    [
+      "Flat / lifeless drums",
+      "Over-compression, clipped transients, static velocities or poor sample layering.",
+      "Bypass bus processing; inspect gain reduction; listen to velocity variation.",
+      "Restore attack, automate levels, vary velocity and use parallel compression.",
+      "More compression is rarely the first answer."
+    ],
+    [
+      "Narrow / phasey mix",
+      "Over-widening, stereo chorus, doubled mono sources or polarity conflicts.",
+      "Check mono, correlation and individual wide layers.",
+      "Keep core elements centered; reduce side level; use real double-tracking where possible.",
+      "Do not use stereo width as a substitute for arrangement."
+    ],
+    [
+      "Mix clips unexpectedly",
+      "Summed buses, plugin output gain, parallel returns or excessive pre-master level.",
+      "Check meters from source to bus to master; bypass plugins to locate gain jumps.",
+      "Reduce source/bus levels and maintain headroom through the routing tree.",
+      "Do not fix a clipping master by simply inserting a limiter at the end."
+    ],
+    [
+      "Guitars disappear in dense mix",
+      "Too much low-mid masking, over-scooped tone or competing synth/vocal presence.",
+      "Listen with bass and vocal; compare rhythm and lead guitar roles.",
+      "Restore useful mids, pan double-tracked parts and automate lead phrases.",
+      "Do not keep scooping 300–800 Hz by habit."
+    ]
+  ]
+}
